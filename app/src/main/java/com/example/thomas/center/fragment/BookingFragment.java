@@ -51,9 +51,9 @@ public class BookingFragment extends Fragment{
     }
 
     /***
-     *
-     * @param view
-     * @param savedInstanceState
+     * Méthode permettant de lire les données du modeles et de les charger dans la vue.
+     * Ici la liste des boutiques favorites ou la liste des évènements réservés.
+     * @param view : affichant les objets models.
      */
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {

@@ -1,6 +1,7 @@
 package com.example.thomas.center.fragment;
 
 /**
+ * Classe Fragements permettant d'afficher la liste des boutiques/évènements selon un type choisi.
  * Created by thomas on 18/04/17.
  */
 import android.content.DialogInterface;
@@ -32,16 +33,32 @@ public class ShopTypeFragment extends Fragment {
 
     private ShopType type;
 
+    /**
+     * Constucteur permettant de déterminé le type de boutiques/évènements à afficher.
+     * @param type : Le type.
+     */
     public ShopTypeFragment(ShopType type) {
         this.type = type;
     }
 
+
+    /**
+     * Méthode permettant d'instancier la vue contenue dans le fragment.
+     * @param inflater : utilisé pour instancier la vue avec le layout (XML) voulu.
+     * @return : la vue principal du fragment.
+     */
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_listview, container, false);
     }
 
+
+    /***
+     * Méthode permettant de lire les données du modeles et de les charger dans la vue.
+     * Ici la listes des boutiques/évènements du type choisi, ainsi que de déterminé l'action du bouton de tri.
+     * @param view : affichant les objets models.
+     */
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -95,6 +112,12 @@ public class ShopTypeFragment extends Fragment {
 
     }
 
+    /**
+     * Méthode permettant de vérifier si les boutiques/évènements sont du bon type
+     * et de les ajoutant dans la liste à afficher.
+     * @param shopList : la liste des toutes les boutiques/évènements
+     * @return : La list des boutiques/évènements à afficher.
+     */
     private List<Shop> checkType(List<Shop> shopList){
         List<Shop> filteredShops = new ArrayList<>();
         for(Shop s : shopList){

@@ -1,6 +1,7 @@
 package com.example.thomas.center.model;
 
 /**
+ * Enum des types de boutiques/évènements, contenant des types de produits.
  * Created by thomas on 18/04/17.
  */
 public enum ShopType {

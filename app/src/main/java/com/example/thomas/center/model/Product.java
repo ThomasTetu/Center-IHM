@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
+ * Classe model représentant un produit
  * Created by thomas on 21/04/17.
  */
 public class Product implements Parcelable{
@@ -12,12 +13,22 @@ public class Product implements Parcelable{
     private String imgPath;
     private String type;
 
+    /**
+     * Constructeur.
+     * @param name : le nom
+     * @param imgPath : le lien de l'image
+     * @param type : le type
+     */
     public Product(String name, String imgPath,String type){
         this.name = name;
         this.imgPath = imgPath;
         this.type = type;
     }
 
+    /**
+     * Constructeur parcelable
+     * @param in : les données "parcelées"
+     */
     private Product(Parcel in) {
         name = in.readString();
         imgPath = in.readString();

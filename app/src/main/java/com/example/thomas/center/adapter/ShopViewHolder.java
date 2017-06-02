@@ -22,7 +22,7 @@ import java.sql.SQLException;
 
 /**
  * Created by thomas on 29/04/17.
- * Classe personnalisée de la vue d'un objetShop
+ * Classe gardienne personnalisée de la vue d'un objetShop, pour éviter le rechargement total des composants (findViewById).
  */
 class ShopViewHolder extends RecyclerView.ViewHolder {
 

@@ -22,6 +22,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ *
+ */
 public class ShopDb extends SQLiteOpenHelper {
 
     private static String DB_NAME = "myDatabase.db";
@@ -43,11 +46,8 @@ public class ShopDb extends SQLiteOpenHelper {
     public void createDataBase() throws IOException {
         boolean dbExist = checkDataBase();
         if(!dbExist){
-            //By calling this method and empty database will be created into the default system path
-            //of your application so we are gonna be able to overwrite that database with our database.
             this.getWritableDatabase();
             try {
-                // Copy the database in assets to the application database.
                 copyDataBase();
             } catch (IOException e) {
                 throw new Error("Error copying database", e);
@@ -63,7 +63,6 @@ public class ShopDb extends SQLiteOpenHelper {
             if (file.exists() && !file.isDirectory()){
             checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READWRITE);}
         } catch(SQLiteException e){
-            //database doesn't exist yet.
         }
         if(checkDB != null){
             checkDB.close();

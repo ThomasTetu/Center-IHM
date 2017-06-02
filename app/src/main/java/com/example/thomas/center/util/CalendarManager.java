@@ -20,6 +20,7 @@ import java.util.Date;
 
 
 /**
+ * Classe permettant d'interagir avec l'application Calendar native du téléphone
  * Created by thomas on 15/05/17.
  */
 public class CalendarManager {
@@ -30,6 +31,10 @@ public class CalendarManager {
         this.context = context;
     }
 
+    /**
+     * Méthode permettant d'ajouter un évènement dans le calendrier.
+      * @param shop : L'évènement.
+     */
     private void addCalendarEvent(final Shop shop) {
         Date date = shop.getDate();
         ContentResolver cr = context.getContentResolver();
@@ -46,6 +51,10 @@ public class CalendarManager {
         toast.show();
     }
 
+    /**
+     * Méthode permettant de supprimer une réservation.
+     * @param shop : L'évènement à annuler.
+     */
     private void deleteCalendarEvent(Shop shop){
         int entryID = listSelectedCalendars(shop.getName());
         Uri eventUri = ContentUris
@@ -55,6 +64,10 @@ public class CalendarManager {
         toast.show();
     }
 
+    /**
+     * Permet de récupérer l'URI de l'application Calendar
+     * @return l'URI
+     */
     private Uri getCalendarUriBase() {
         Uri eventUri;
         if (android.os.Build.VERSION.SDK_INT <= 7) {
@@ -65,6 +78,10 @@ public class CalendarManager {
         return eventUri;
     }
 
+    /**
+     * Permet d'ajouter ou d'enlever une réservation
+     * @param shop : L'évènement à ajouter ou enlever
+     */
     public void interact(Shop shop){
         if(shop.isRegistered()){
             deleteCalendarEvent(shop);
@@ -73,10 +90,11 @@ public class CalendarManager {
         }
     }
 
-    public boolean isEventInCal(String shopName){
-       return listSelectedCalendars(shopName) != 0;
-    }
-
+    /**
+     * Permet de récupérer l'id d'un évènement réservé.
+     * @param eventTitle : Le nom de l'évènement
+     * @return : l'id.
+     */
     private int listSelectedCalendars(String eventTitle) {
         Uri eventUri = getCalendarUriBase();
         int result = 0;

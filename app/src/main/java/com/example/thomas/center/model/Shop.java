@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
+ * Classe model représentant une boutique ou un évènement.
  * Created by thomas on 18/04/17.
  */
 public class Shop implements Parcelable {
@@ -23,6 +24,15 @@ public class Shop implements Parcelable {
     private String description;
     private boolean registered = false;
 
+    /**
+     * Constructeur.
+     * @param name : le nom
+     * @param description : la description
+     * @param imgPath : le lien de l'image
+     * @param previewImgPath : le lien de l'image d'aperçu
+     * @param type : le type
+     * @param event : boolean pour savoir si c'est une boutique ou un évènement
+     */
     public Shop(String name,String description, String imgPath, String previewImgPath, ShopType type, boolean event){
         this.name = name;
         this.description = description;
@@ -33,6 +43,10 @@ public class Shop implements Parcelable {
         this.event = event;
     }
 
+    /**
+     * Constructeur parcelable
+     * @param in : les données "parcelées"
+     */
     private Shop(Parcel in) {
         name = in.readString();
         description = in.readString();
