@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Accueil" />
+
+        <item
+            android:id="@+id/booking"
+            android:icon="@drawable/ic_book_black_24dp"
+            android:title="Mes Réservations" />
+
+        <item
+            android:id="@+id/Favorites"
+            android:icon="@drawable/ic_star_black_12dp"
+            android:title="Mes Favoris" />
+
+</menu>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Sophia Center</string>
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+    <string name="go_to_another_activity">Go to another Activity</string>
+    <string name="a_textview_in_fragment">A TextView in Fragment</string>
+    <string name="shopview">shopView</string>
+    <string name="popup">popUp</string>
+    <string name="this_is_a_sample_popup_window">This is a sample popup window.</string>
+
+</resources>
