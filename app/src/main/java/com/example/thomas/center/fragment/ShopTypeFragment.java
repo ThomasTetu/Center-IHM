@@ -92,17 +92,18 @@ public class ShopTypeFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 final AlertDialog.Builder builderSingle = new AlertDialog.Builder(getActivity());
                 final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getActivity(), R.layout.filter_dialog);
                 for(String s : type.getStrings()){
                     arrayAdapter.add(s);
                 }
                 arrayAdapter.add("Tout voir");
-                builderSingle.setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
+                builderSingle.setSingleChoiceItems(arrayAdapter, -1, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        String strName = arrayAdapter.getItem(which);
-                        adapter.filter(strName);
+                        String str = arrayAdapter.getItem(which);
+                        adapter.filter(str);
                     }
                 });
                 builderSingle.show();

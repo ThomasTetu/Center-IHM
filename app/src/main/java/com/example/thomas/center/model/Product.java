@@ -11,18 +11,19 @@ public class Product implements Parcelable{
 
     private String name;
     private String imgPath;
-    private String type;
+    private String typeShop;
+    private String typeProduct;
 
     /**
      * Constructeur.
      * @param name : le nom
      * @param imgPath : le lien de l'image
-     * @param type : le type
+     * @param typeShop : le type de magasin auquel il appartient
      */
-    public Product(String name, String imgPath,String type){
+    public Product(String name, String imgPath,String typeShop){
         this.name = name;
         this.imgPath = imgPath;
-        this.type = type;
+        this.typeShop = typeShop;
     }
 
     /**
@@ -32,7 +33,8 @@ public class Product implements Parcelable{
     private Product(Parcel in) {
         name = in.readString();
         imgPath = in.readString();
-        type = in.readString();
+        typeShop = in.readString();
+        typeProduct = in.readString();
     }
 
     public static final Creator<Product> CREATOR = new Creator<Product>() {
@@ -55,9 +57,10 @@ public class Product implements Parcelable{
         return imgPath;
     }
 
-    public String getType() {
-        return type;
+    public String getTypeShop() {
+        return typeShop;
     }
+
 
     @Override
     public int describeContents() {
@@ -68,6 +71,9 @@ public class Product implements Parcelable{
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
         dest.writeString(imgPath);
-        dest.writeString(type);
+        dest.writeString(typeShop);
+        dest.writeString(typeProduct);
     }
+
+
 }

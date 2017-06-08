@@ -6,15 +6,20 @@ package com.example.thomas.center;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.GridView;
 
 import com.example.thomas.center.adapter.GridProductAdapter;
+import com.example.thomas.center.model.Product;
 import com.example.thomas.center.model.Shop;
 
+import java.util.List;
+
 public class ProductsActivity extends AppCompatActivity{
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

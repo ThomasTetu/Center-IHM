@@ -109,7 +109,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<ShopViewHolder> {
         {
             for (Shop s : filterList){
                 for(Product p : s.getProductList()){
-                    if(p.getType().toLowerCase().equals(charText)){
+                    if(p.getTypeShop().toLowerCase().equals(charText)){
                         mShops.add(s);
                     }
                 }

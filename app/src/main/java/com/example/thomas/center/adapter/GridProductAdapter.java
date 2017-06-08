@@ -14,13 +14,14 @@ import com.example.thomas.center.R;
 import com.example.thomas.center.model.Product;
 import com.example.thomas.center.util.DownloadImageTask;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by thomas on 01/05/17.
  */
 public class GridProductAdapter extends ArrayAdapter<Product> {
-
     /**
      * Classe Adapter pour afficher une grille de produits.
      * @param context : Le context.
@@ -60,4 +61,5 @@ public class GridProductAdapter extends ArrayAdapter<Product> {
         imageTask.execute(item.getImgPath());
         return convertView;
     }
+
 }
